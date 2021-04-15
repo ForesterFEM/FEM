@@ -23,7 +23,6 @@ wwb_L = 0
 wwb_P = 1
 
 
-n=100
 def generujTabliceGeometrii(x_0, x_p, n):
     x= np.linspace(x_0, x_p, n+1)
     wez= np.array([[1, x[0]]])
@@ -41,5 +40,5 @@ def rysujGeom(wezly,elementy):
     y = np.zeros((int(obliczwez),1))
     plt.plot(wezly[:,1],y,'r.')
     
-    
+
 
