@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import rys
+import gen
 c=0
 f=0
 x_0=0
@@ -22,23 +24,8 @@ twb_P = 'D'
 wwb_L = 0
 wwb_P = 1
 
-
-def generujTabliceGeometrii(x_0, x_p, n):
-    x= np.linspace(x_0, x_p, n+1)
-    wez= np.array([[1, x[0]]])
-    elem = np.array([[1, 1 ,2 ]] )
-    for i in range(1,len(x)):
-        wez=np.insert(wez,i,[i+1, x[i]],0)
-        elem=np.insert(elem,i,[i+1,i+1,i+2],0)
-    elem = np.delete(elem, len(elem)-1,0)
-    return np.round(wez,5) ,np.round(elem,5)
-
-
-def rysujGeom(wezly,elementy):
-    obliczwez = np.size(wezly)/2
-    print(obliczwez)
-    y = np.zeros((int(obliczwez),1))
-    plt.plot(wezly[:,1],y,'r.')
+z,c =gen.genTabGeom(0,1,5)
+rys.rysGeom(z,c)
     
 
 
