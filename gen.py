@@ -1,6 +1,6 @@
 import numpy as np
-def genTabGeom(x_0, x_p, n):
-    x= np.linspace(x_0, x_p, n+1)
+def genTabGeom(x_0, x_1, n):
+    x= np.linspace(x_0, x_1, n)
     wez= np.array([[1, x[0]]]) 
     elem = np.array([[0, 0 ,0 ]] ) 
     for i in range(1,len(x)):
